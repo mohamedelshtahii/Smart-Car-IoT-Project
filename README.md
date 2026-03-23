@@ -5,7 +5,7 @@ This project demonstrates a high-level convergence of Embedded Systems, Machine 
 
 📸 System Overview
 <p align="center">
-<img src="Screenshot_1.jpg" width="600" alt="Physical Hardware Setup">
+<img width="1919" height="950" alt="Screenshot_1" src="https://github.com/user-attachments/assets/2c79180a-4675-4702-bcf0-64b7845062d6" />
 
 
 <i>Figure 1: The Integrated Physical Hardware Assembly</i>
