@@ -4,8 +4,7 @@ Autonomous Navigation | Edge AI Sound Recognition | Cloud Telemetry
 This project demonstrates a high-level convergence of Embedded Systems, Machine Learning (TinyML), and Industrial IoT (IIoT). It features a dual-controller architecture capable of real-time environmental awareness and remote data visualization.
 
 📸 System Overview
-<p align="center">
-<img width="1919" height="950" alt="Screenshot_1" src="https://github.com/user-attachments/assets/2c79180a-4675-4702-bcf0-64b7845062d6" />
+<img width="1916" height="902" alt="Screenshot_3" src="https://github.com/user-attachments/assets/0a39c237-37f1-4d01-80dd-8103f04613fd" />
 
 
 <i>Figure 1: The Integrated Physical Hardware Assembly</i>
@@ -24,6 +23,7 @@ Contextual Stability: Automatic servo engagement based on IMU (MPU6050) orientat
 
 🛠️ Tech Stack & Architecture
 Hardware Components
+
 ESP32: The "Brain" for AI inference and Wi-Fi/MQTT gateway.
 
 Arduino Nano: The "Reflex" controller for servos and touch sensors.
@@ -43,8 +43,8 @@ IoT Stack: MQTT (Aedes), Node-RED, InfluxDB, Grafana.
 1. Cloud Telemetry Dashboard
 The system reports linear and angular velocity in real-time. This data is processed through InfluxDB to provide historical trends and performance metrics.
 
-<p align="center">
-<img src="Screenshot_3.png" width="800" alt="Grafana Dashboard">
+<img width="1916" height="902" alt="Screenshot_3" src="https://github.com/user-attachments/assets/1bf9a27a-c8dc-401b-b46c-083ab400f4c4" />
+
 
 
 <i>Figure 2: Grafana Telemetry Dashboard showing Real-time Velocity Gauges</i>
@@ -53,8 +53,8 @@ The system reports linear and angular velocity in real-time. This data is proces
 2. Node-RED Orchestration
 The backend uses a specialized logic flow to parse JSON payloads from the car and route them into the database bucket.
 
-<p align="center">
-<img src="Screenshot_2.png" width="800" alt="Node-RED Flow">
+<img width="1898" height="863" alt="Screenshot_2" src="https://github.com/user-attachments/assets/5d39c056-0526-45cc-8230-b3f7802852f6" />
+
 
 
 <i>Figure 3: Node-RED Backend Flow for Data Transformation</i>
@@ -63,8 +63,8 @@ The backend uses a specialized logic flow to parse JSON payloads from the car an
 3. Time-Series Queries (Flux)
 Advanced data windowing and filtering are performed using the Flux language to ensure smooth visualization of sensor data.
 
-<p align="center">
-<img src="Screenshot_4.png" width="800" alt="InfluxDB Flux Query">
+<img width="1069" height="331" alt="Screenshot_4" src="https://github.com/user-attachments/assets/5884611b-4307-4c6b-b2a3-34437fba1b8b" />
+
 
 
 <i>Figure 4: InfluxDB Data Querying and Processing Logic</i>
@@ -72,6 +72,8 @@ Advanced data windowing and filtering are performed using the Flux language to e
 
 🧠 TinyML Implementation
 The core intelligence is a Support Vector Machine (SVM) model trained on 512-point FFT frequency vectors.
+
+<img width="1919" height="950" alt="Screenshot_1" src="https://github.com/user-attachments/assets/ae0865c1-b522-4ef9-b38e-e794cf655b96" />
 
 Accuracy: 100% precision in test environments.
 
