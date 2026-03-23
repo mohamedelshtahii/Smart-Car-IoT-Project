@@ -4,7 +4,13 @@ Autonomous Navigation | Edge AI Sound Recognition | Cloud Telemetry
 This project demonstrates a high-level convergence of Embedded Systems, Machine Learning (TinyML), and Industrial IoT (IIoT). It features a dual-controller architecture capable of real-time environmental awareness and remote data visualization.
 
 📸 System Overview
-<img width="1916" height="902" alt="Screenshot_3" src="https://github.com/user-attachments/assets/0a39c237-37f1-4d01-80dd-8103f04613fd" />
+
+<p align="center">
+  <img src="<img width="1916" height="902" alt="Screenshot_3" src="https://github.com/user-attachments/assets/0a39c237-37f1-4d01-80dd-8103f04613fd" />
+" width="850">
+  <br>
+  <b>Figure X: وصف الصورة</b>
+</p>
 
 
 <i>Figure 1: The Integrated Physical Hardware Assembly</i>
