@@ -1,92 +1,94 @@
 Integrated AIoT Smart Car System 🏎️🤖
 Autonomous Navigation | Edge AI Sound Recognition | Cloud Telemetry
-
 This project demonstrates a high-level convergence of Embedded Systems, Machine Learning (TinyML), and Industrial IoT (IIoT). It features a dual-controller architecture capable of real-time environmental awareness and remote data visualization.
 
 📸 System Overview
+<p align="center">
+<img width="850" alt="Hardware Setup" src="https://github.com/user-attachments/assets/253e6402-dc1e-40bb-ab9e-f83cb955e8f9" />
 
-<img width="800" height="950" alt="Screenshot_1" src="https://github.com/user-attachments/assets/253e6402-dc1e-40bb-ab9e-f83cb955e8f9" />
 
-<i>Figure 1: The Integrated Physical Hardware Assembly</i>
+<i><b>Figure 1:</b> The Integrated Physical Hardware Assembly & Wiring Architecture.</i>
 </p>
 
 🚀 Key Features
-Edge AI Acoustic Awareness: Real-time sound classification (Bike vs. Car) using an SVM model on ESP32.
+Edge AI Acoustic Awareness: Real-time sound classification (Bike vs. Car) using a Support Vector Machine (SVM) model optimized for ESP32.
 
-Reflexive Control: Arduino Nano manages mechanical stability and capacitive touch sensing.
+Reflexive Control: Arduino Nano manages mechanical stability and high-speed capacitive touch sensing.
 
-IIoT Pipeline: Telemetry data sent via MQTT to a Node-RED orchestrator.
+IIoT Pipeline: Industrial-grade data path sending telemetry via MQTT to a Node-RED orchestrator.
 
-Real-time Dashboards: Time-series data visualization using InfluxDB and Grafana.
+Real-time Dashboards: Advanced time-series visualization using InfluxDB and Grafana.
 
-Contextual Stability: Automatic servo engagement based on IMU (MPU6050) orientation.
+Contextual Stability: Automatic servo engagement logic based on IMU (MPU6050) orientation to prevent jitter.
 
 🛠️ Tech Stack & Architecture
-Hardware Components
+1. Hardware Components
+ESP32: The "System Brain" – handles AI inference and Wi-Fi/MQTT communication.
 
-ESP32: The "Brain" for AI inference and Wi-Fi/MQTT gateway.
+Arduino Nano: The "Reflex Controller" – dedicated to real-time sensor interrupts and servo PWM.
 
-Arduino Nano: The "Reflex" controller for servos and touch sensors.
+MPU6050: 6-Axis motion tracking for orientation and velocity estimation.
 
-MPU6050: 6-Axis motion tracking.
+HC-SR04: Ultrasonic sensor for proximity mapping and proportional braking.
 
-HC-SR04: Ultrasonic proximity mapping.
+Custom Chassis: Features a capacitive touch-sensitive "skin" for human-robot interaction.
 
-Custom Chassis: Equipped with capacitive touch sensitive skin.
+2. Software & Cloud Stack
+Embedded Programming: C++, TinyML (via micromlgen), arduinoFFT for signal processing.
 
-Software & Cloud
-Embedded: C++, TinyML (micromlgen), arduinoFFT.
+Backend & Analytics: MQTT (Aedes Broker), Node-RED, InfluxDB (Time-Series DB).
 
-IoT Stack: MQTT (Aedes), Node-RED, InfluxDB, Grafana.
+Frontend: Grafana for professional-grade telemetry dashboards.
 
 📊 Data Visualization & Logic
 1. Cloud Telemetry Dashboard
-The system reports linear and angular velocity in real-time. This data is processed through InfluxDB to provide historical trends and performance metrics.
+The system publishes linear and angular velocity. Data is aggregated in InfluxDB to compute historical trends and moving averages.
 
-<img width="800" height="800" alt="Screenshot_3" src="https://github.com/user-attachments/assets/1bf9a27a-c8dc-401b-b46c-083ab400f4c4" />
+<p align="center">
+<img width="850" alt="Grafana Dashboard" src="https://github.com/user-attachments/assets/1bf9a27a-c8dc-401b-b46c-083ab400f4c4" />
 
 
-
-<i>Figure 2: Grafana Telemetry Dashboard showing Real-time Velocity Gauges</i>
+<i><b>Figure 2:</b> Grafana Telemetry Dashboard showing real-time velocity gauges and trends.</i>
 </p>
 
 2. Node-RED Orchestration
-The backend uses a specialized logic flow to parse JSON payloads from the car and route them into the database bucket.
+A specialized logic flow parses raw MQTT JSON payloads, extracts variables, and performs metadata tagging before storage.
 
-<img width="800" height="863" alt="Screenshot_2" src="https://github.com/user-attachments/assets/5d39c056-0526-45cc-8230-b3f7802852f6" />
+<p align="center">
+<img width="850" alt="Node-RED Flow" src="https://github.com/user-attachments/assets/5d39c056-0526-45cc-8230-b3f7802852f6" />
 
 
-
-<i>Figure 3: Node-RED Backend Flow for Data Transformation</i>
+<i><b>Figure 3:</b> Node-RED Backend flow for seamless data transformation and routing.</i>
 </p>
 
 3. Time-Series Queries (Flux)
-Advanced data windowing and filtering are performed using the Flux language to ensure smooth visualization of sensor data.
+We utilize the Flux language for windowing and noise reduction, ensuring the dashboard displays clean, actionable data.
 
-<img width="1069" height="331" alt="Screenshot_4" src="https://github.com/user-attachments/assets/5884611b-4307-4c6b-b2a3-34437fba1b8b" />
+<p align="center">
+<img width="850" alt="Flux Query" src="https://github.com/user-attachments/assets/5884611b-4307-4c6b-b2a3-34437fba1b8b" />
 
 
-
-<i>Figure 4: InfluxDB Data Querying and Processing Logic</i>
+<i><b>Figure 4:</b> InfluxDB Flux logic for data querying and edge-case filtering.</i>
 </p>
 
 🧠 TinyML Implementation
-The core intelligence is a Support Vector Machine (SVM) model trained on 512-point FFT frequency vectors.
+The core intelligence resides in an SVM Model trained on frequency spectrums (FFT) to distinguish engine sounds.
 
-<img width="800" height="950" alt="Screenshot_1" src="https://github.com/user-attachments/assets/ae0865c1-b522-4ef9-b38e-e794cf655b96" />
+<p align="center">
+<img width="850" alt="TinyML Code" src="https://github.com/user-attachments/assets/ae0865c1-b522-4ef9-b38e-e794cf655b96" />
+</p>
 
-Accuracy: 100% precision in test environments.
+Precision: 100% achieved in testing using a Linear Kernel.
 
-Method: Cosine Similarity calculation on the edge for high-confidence classification.
+Inference: Uses Cosine Similarity to ensure high-confidence classification before triggering actions.
 
 📂 Repository Structure
-/src/nano/: Arduino Nano code for reflex control.
-
-/src/esp32/: ESP32 code for AI and MQTT.
-
-/models/: Python training scripts and model.h.
-
-/flows/: Node-RED JSON flow configurations.
-
+Bash
+├── src/
+│   ├── nano/     # Arduino Nano code (Servo control, Capacitive Touch)
+│   └── esp32/    # ESP32 code (TinyML, MQTT, MPU6050)
+├── models/       # Python training scripts (Jupyter) and model.h
+├── flows/        # Node-RED JSON flow configurations
+└── docs/         # Full Technical Report and Proximity Analysis
 👨‍💻 Prepared by
 Mohammed Alaa Internet of Things Solutions Engineer in Training LinkedIn | GitHub
