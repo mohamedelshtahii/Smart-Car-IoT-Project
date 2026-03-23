@@ -43,7 +43,7 @@ IoT Stack: MQTT (Aedes), Node-RED, InfluxDB, Grafana.
 1. Cloud Telemetry Dashboard
 The system reports linear and angular velocity in real-time. This data is processed through InfluxDB to provide historical trends and performance metrics.
 
-<img width="1916" height="902" alt="Screenshot_3" src="https://github.com/user-attachments/assets/1bf9a27a-c8dc-401b-b46c-083ab400f4c4" />
+<img width="800" height="800" alt="Screenshot_3" src="https://github.com/user-attachments/assets/1bf9a27a-c8dc-401b-b46c-083ab400f4c4" />
 
 
 
@@ -53,7 +53,7 @@ The system reports linear and angular velocity in real-time. This data is proces
 2. Node-RED Orchestration
 The backend uses a specialized logic flow to parse JSON payloads from the car and route them into the database bucket.
 
-<img width="1898" height="863" alt="Screenshot_2" src="https://github.com/user-attachments/assets/5d39c056-0526-45cc-8230-b3f7802852f6" />
+<img width="800" height="863" alt="Screenshot_2" src="https://github.com/user-attachments/assets/5d39c056-0526-45cc-8230-b3f7802852f6" />
 
 
 
@@ -73,7 +73,7 @@ Advanced data windowing and filtering are performed using the Flux language to e
 🧠 TinyML Implementation
 The core intelligence is a Support Vector Machine (SVM) model trained on 512-point FFT frequency vectors.
 
-<img width="1919" height="950" alt="Screenshot_1" src="https://github.com/user-attachments/assets/ae0865c1-b522-4ef9-b38e-e794cf655b96" />
+<img width="800" height="950" alt="Screenshot_1" src="https://github.com/user-attachments/assets/ae0865c1-b522-4ef9-b38e-e794cf655b96" />
 
 Accuracy: 100% precision in test environments.
 
